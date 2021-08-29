@@ -1,0 +1,7 @@
+[user]
+	name = Hypercube
+	email = hypercube@0x01.me
+[rerere]
+	enabled = true
+[init]
+	templateDir = ~/.config/git/template
