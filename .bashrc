@@ -70,7 +70,7 @@ if [ "$fancy_prompt" = yes ]; then
             if ((duration>30)); then
                 ds="$ds!\a"
             fi
-            printf "\e[7m╳\e[m%*s\r\e[37m└─\e[m[\e[1;$((retcode?31:32))m$retcode\e[m]\e[37m──\e[m[\e[1;35m$ds\e[m]──\e[m[\e[36m%(%Y-%m-%d %H:%M:%S)T\e[m]\n" $((COLUMNS-1))
+            printf "\e[7m╳\e[m%*s\r\e[37m└─\e[m[\e[1;$((retcode?31:32))m$retcode\e[m]\e[37m──\e[m[\e[1;35m$ds\e[m]\e[37m──\e[m[\e[36m%(%Y-%m-%d %H:%M:%S)T\e[m]\n" $((COLUMNS-1))
         fi
         local dir=$PWD/
         dir=${dir#"$HOME/"}
