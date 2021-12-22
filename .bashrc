@@ -127,10 +127,3 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-export EDITOR=vim
-export LANG=zh_CN.UTF-8
-export LANGUAGE=en_US:en:C:zh_CN:zh
-export LC_MESSAGES=en_US.UTF-8
-export LC_TIME=en_DK.UTF-8
-export TZ=Asia/Shanghai
