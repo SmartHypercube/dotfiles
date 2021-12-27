@@ -16,16 +16,7 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
-
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
-
+export PATH=$HOME/.local/bin:$PATH
 export EDITOR=vim
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US:en:C:zh_CN:zh
