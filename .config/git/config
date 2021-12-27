@@ -1,7 +1,12 @@
 [user]
 	name = Hypercube
 	email = hypercube@0x01.me
+[credential]
+	helper = store
 [rerere]
 	enabled = true
 [init]
 	templateDir = ~/.config/git/template
+	defaultBranch = master
+[pull]
+	ff = only
