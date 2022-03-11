@@ -10,3 +10,5 @@
 	defaultBranch = master
 [pull]
 	ff = only
+[submodule]
+	recurse = true
