@@ -82,7 +82,7 @@ if [ "$fancy_prompt" = yes ]; then
     PROMPT_COMMAND=ps1_c
     PS1='\[\e[1m\]\$\[\e[m\] '
     PS2='> '
-    PS0='\e]0;$(_hypercube_ps0_history=$(history 1); printf "%s" "${_hypercube_ps0_history#*[0-9]  }")\a\e[$((_hypercube_ps0_start=SECONDS,37))m├─\e[m[\e[36m\D{%Y-%m-%d %H:%M:%S}\e[m]\n'
+    PS0='\e]0;$(_hypercube_ps0_history=$(history 1); printf "%s" "${HOSTNAME}: ${_hypercube_ps0_history#*[0-9]  }")\a\e[$((_hypercube_ps0_start=SECONDS,37))m├─\e[m[\e[36m\D{%Y-%m-%d %H:%M:%S}\e[m]\n'
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
