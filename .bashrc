@@ -55,9 +55,9 @@ case "$TERM" in
 esac
 if [ "$fancy_prompt" = yes ]; then
     _hypercube_ps1_user_color=$((0x$(echo -n "user-${USER}" | sha256sum | head -c 6)))
-    _hypercube_ps1_user_color=$((_hypercube_ps1_user_color >> 16 & 0x7f + 0x20))';'$((_hypercube_ps1_user_color >> 8 & 0x7f + 0x20))';'$((_hypercube_ps1_user_color & 0x7f + 0x20))
+    _hypercube_ps1_user_color=$((_hypercube_ps1_user_color/65536%128+32))';'$((_hypercube_ps1_user_color/256%128+32))';'$((_hypercube_ps1_user_color%128+32))
     _hypercube_ps1_hostname_color=$((0x$(echo -n "hostname-${HOSTNAME}" | sha256sum | head -c 6)))
-    _hypercube_ps1_hostname_color=$((_hypercube_ps1_hostname_color >> 16 & 0x7f + 0x20))';'$((_hypercube_ps1_hostname_color >> 8 & 0x7f + 0x20))';'$((_hypercube_ps1_hostname_color & 0x7f + 0x20))
+    _hypercube_ps1_hostname_color=$((_hypercube_ps1_hostname_color/65536%128+32))';'$((_hypercube_ps1_hostname_color/256%128+32))';'$((_hypercube_ps1_hostname_color%128+32))
     function _hypercube_ps1_c {
         local retcode=$?
         if [ -v _hypercube_ps0_start ]; then
