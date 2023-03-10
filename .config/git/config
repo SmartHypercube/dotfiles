@@ -12,3 +12,5 @@
 	ff = only
 [submodule]
 	recurse = true
+[alias]
+	adog = log --all --decorate --oneline --graph
