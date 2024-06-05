@@ -8,14 +8,6 @@
 # for ssh logins, install and configure the libpam-umask package.
 umask 022
 
-# if running bash
-if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-        . "$HOME/.bashrc"
-    fi
-fi
-
 export PATH=$HOME/.local/bin:$PATH
 export EDITOR=vim
 export LANG=en_US.UTF-8
@@ -33,3 +25,11 @@ export LC_PAPER=zh_CN.UTF-8
 export LC_TELEPHONE=zh_CN.UTF-8
 export LC_TIME=en_DK.UTF-8
 export TZ=Asia/Shanghai
+
+# if running bash
+if [ -n "$BASH_VERSION" ]; then
+    # include .bashrc if it exists
+    if [ -f "$HOME/.bashrc" ]; then
+        . "$HOME/.bashrc"
+    fi
+fi
