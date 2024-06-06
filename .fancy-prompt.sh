@@ -7,6 +7,10 @@ esac
 
 if [ "$fancy_prompt" = yes ]; then
 
+    # in some cases, $USER and $HOSTNAME are not set, so we use "whoami" and "hostname" instead
+    USER=${USER:-$(whoami)}
+    HOSTNAME=${HOSTNAME:-$(hostname)}
+
     # calculate user's color with sha256
     _hypercube_ps1_user_color=$((0x$(echo -n "user-${USER}" | sha256sum | head -c 6)))
     # format: "%d;%d;%d"
@@ -45,7 +49,7 @@ if [ "$fancy_prompt" = yes ]; then
             else
                 ds="$((duration/86400))d$((duration%86400/3600))h$((duration%3600/60))m$((duration%60))s"
             fi
-            # if duration is longer than 30 seconds, add a exclamation mark and ring the bell by printing "\a"
+            # if duration is longer than 30 seconds, add an exclamation mark and ring the bell by printing "\a"
             if ((duration>30)); then
                 ds="$ds!\a"
             fi
